@@ -1,11 +1,16 @@
-Pause message : Next Exp ?
+Pause message: Next exp ?
 
 images: boum.jpg, test.jpg
-words: Thomas, est, trop, beau, thomas, est, trop, fort
+words: 1, est, trop, beau, thomas, est, trop, fort
 img speed, word speed: 800,800
 img nb, word nb: 2,4
 
 images: boum.jpg, test.jpg
-words: Thomas, est, trop, beau, thomas, est, trop, fort
+words: 2, est, trop, beau, thomas, est, trop, fort
 img speed, word speed: 500,500
+img nb, word nb: 2,4
+
+images: boum.jpg, test.jpg
+words: 3, est, trop, beau, thomas, est, trop, fort
+img speed, word speed: 700,700
 img nb, word nb: 2,4
