@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1bd9d9b-d38c-45f5-96c2-079b85372f4b" name="Default" comment="Changed the import">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+    <list default="true" id="d1bd9d9b-d38c-45f5-96c2-079b85372f4b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FreeExp.iws" />
@@ -29,7 +29,7 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="20" selection-start="764" selection-end="764" vertical-scroll-proportion="0.55609757" vertical-offset="0" max-vertical-offset="4176">
+            <state line="15" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="4176">
               <folding>
                 <element signature="e#702#714#0" expanded="true" />
               </folding>
@@ -41,15 +41,6 @@
         <entry file="file://$PROJECT_DIR$/config-h.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state line="25" column="68" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="558">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="20" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="378">
               <folding />
             </state>
           </provider>
@@ -356,18 +347,24 @@
       <created>1380926497661</created>
       <updated>1380926497661</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Changed the import from mtTinker to Tkinter as multithreading isn't needed">
+      <created>1380926928334</created>
+      <updated>1380926928334</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.49973047" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.49973047" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959569" sideWeight="0.67083335" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959569" sideWeight="0.67083335" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.49973047" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.50026953" order="1" side_tool="true" content_ui="tabs" />
@@ -376,8 +373,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.49973047" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.49973047" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -412,7 +407,8 @@
     <MESSAGE value="This is a multi-threaded version of FreeExp, also using more OOP." />
     <MESSAGE value="On the way to being able to handle clickable steps." />
     <MESSAGE value="Completely modified the format of the config file, and wrote a parser to interpret it.&#10;&#10;The config file now uses a very high level language (ie. english)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completely modified the format of the config file, and wrote a parser to interpret it.&#10;&#10;The config file now uses a very high level language (ie. english)" />
+    <MESSAGE value="Changed the import from mtTinker to Tkinter as multithreading isn't needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the import from mtTinker to Tkinter as multithreading isn't needed" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -438,13 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="378">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
@@ -464,13 +453,6 @@
     <entry file="file:///usr/lib/python2.7/lib-tk/Tkinter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="533" column="0" selection-start="18976" selection-end="18976" vertical-scroll-proportion="0.0" vertical-offset="9389" max-vertical-offset="68472">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="447" selection-end="448" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="378">
           <folding />
         </state>
       </provider>
@@ -500,13 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mtTkinter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1975" selection-end="1975" vertical-scroll-proportion="-0.110569105" vertical-offset="1058" max-vertical-offset="4428">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/lib-tk/tkFont.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="87" column="0" selection-start="2618" selection-end="2618" vertical-scroll-proportion="0.68455285" vertical-offset="1145" max-vertical-offset="3996">
@@ -521,13 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config-h.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="68" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
@@ -537,7 +505,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="20" selection-start="764" selection-end="764" vertical-scroll-proportion="0.55609757" vertical-offset="0" max-vertical-offset="4176">
+        <state line="15" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="4176">
           <folding>
             <element signature="e#702#714#0" expanded="true" />
           </folding>
