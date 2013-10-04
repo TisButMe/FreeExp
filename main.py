@@ -19,8 +19,6 @@ import ImageTk
 import tkFont
 import Tkinter as tk
 
-import mtTkinter as tk
-
 
 class App:
     def __init__(self, exp_list, pause_message="Next experiment"):
