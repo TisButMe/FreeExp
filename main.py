@@ -17,8 +17,6 @@ __author__ = 'Thomas Poinsot'
 import Image
 import ImageTk
 import tkFont
-import time
-import threading
 
 import mtTkinter as tk
 
@@ -29,62 +27,79 @@ class App:
         self.pause_mess = pause_message
         self.end_mess = "End of the experiment !"
         self.currentexp = 0
-        self.running_exp_thread = threading.Thread()
 
         self.root = tk.Tk()
+        self.root.title("FreeExp 0.1")
         self.customfont = tkFont.Font(family="Helvetica", size=50)
         self.label = tk.Label(self.root)
         self.label.pack()
 
         self.display_text(self.pause_mess)
-        self.root.bind_all("<Button-1>", lambda event: self.start(self.currentexp))
+        self.root.bind_all("<Button-1>", lambda event: self.continue_exec())
 
         self.root.mainloop()
 
-    def start(self, expnb=0):
-        if not self.running_exp_thread.isAlive() and expnb < len(self.exp_list):
-            if expnb == len(self.exp_list) - 1:
-                self.running_exp_thread = threading.Thread(target=self.exp_list[expnb].start, args=[self, True])
-            else:
-                self.running_exp_thread = threading.Thread(target=self.exp_list[expnb].start, args=[self])
+    def continue_exec(self):
+        self.root.unbind_all("<Button-1>")
+        last = self.exp_list[self.currentexp].do_next_step(self)
 
-            self.running_exp_thread.daemon = True
-            self.running_exp_thread.start()
+        if last and self.currentexp < len(self.exp_list) - 1:
             self.currentexp += 1
+            self.display_text(self.pause_mess, clickable=True)
+        elif last and self.currentexp == len(self.exp_list) - 1:
+            self.display_text(self.end_mess)
 
-    def display_image(self, filename):
+    def display_image(self, filename, for_time=0, clickable=False):
         image = Image.open(filename)
         image.thumbnail((800, 600), Image.ANTIALIAS)
         tkimage = ImageTk.PhotoImage(image)
         self.label.configure(image=tkimage, width=800, height=600)
         self.label.image = tkimage
 
-    def display_text(self, text):
+        if clickable:
+            self.root.bind_all("<Button-1>", lambda event: self.continue_exec())
+
+        if for_time != 0:
+            self.root.after(for_time, self.continue_exec)
+
+    def display_text(self, text, for_time=0, clickable=False):
         self.label.configure(text=text, image="", width=19, height=7,
                              font=self.customfont)
+        if clickable:
+            self.root.bind_all("<Button-1>", lambda event: self.continue_exec())
+
+        if for_time != 0:
+            self.root.after(for_time, self.continue_exec)
 
 
 class Experiment:
     def __init__(self, img_list, word_list, img_speed, word_speed, img_nb, word_nb):
         self.exp = self.gen_exp(img_list, word_list, img_speed, word_speed, img_nb, word_nb)
+        self.current_step = 0
 
     def __getitem__(self, item):
         return self.exp[item]
 
-    def start(self, display, last=False):
-        for step in self.exp:
-            print(step.value)
+    # Returns true if their is no more steps to do
+    def do_next_step(self, display):
+        if self.current_step < len(self.exp):
+            step = self.exp[self.current_step]
+
             if step.type == "text":
-                display.display_text(step.value)
+                display.display_text(step.value, step.length)
             elif step.type == "image":
-                display.display_image(step.value)
+                display.display_image(step.value, step.length)
+            elif step.type == "click":
+                if step.action == "display_text":
+                    display.display_text(step.value, clickable=True)
+                elif step.action == "display_image":
+                    display.display_image(step.value, clickable=True)
 
-            time.sleep(float(step.length) / 1000)
-
-        if last:
-            display.display_text(display.end_mess)
+            self.current_step += 1
+            return False
         else:
-            display.display_text(display.pause_mess)
+            return True
+
 
     @staticmethod
     def gen_exp(img_list, word_list, img_speed, word_speed, img_nb, word_nb):
@@ -106,10 +121,11 @@ class Experiment:
 
 
 class Step:
-    def __init__(self, step_type, value, length):
+    def __init__(self, step_type, value, length=0, action=""):
         self.type = step_type
         self.value = value
         self.length = length
+        self.action = action
 
 
 def read_exp(f):
