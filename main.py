@@ -14,66 +14,102 @@ __author__ = 'Thomas Poinsot'
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import Tkinter as tk
 import Image
 import ImageTk
 import tkFont
+import time
+import threading
+
+import mtTkinter as tk
 
 
 class App:
-    compt = 0
-    exp = []
+    def __init__(self, exp_list, pause_message):
+        self.exp_list = exp_list
+        self.pause_mess = pause_message
+        self.end_mess = "End of the experiment !"
+        self.currentexp = 0
+        self.running_exp_thread = threading.Thread()
 
-    def __init__(self, exp):
         self.root = tk.Tk()
-
+        self.customfont = tkFont.Font(family="Helvetica", size=50)
         self.label = tk.Label(self.root)
         self.label.pack()
 
-        self.exp = exp
-        self.customfont = tkFont.Font(family="Helvetica", size=50)
+        self.display_text(self.pause_mess)
+        self.root.bind_all("<Button-1>", lambda event: self.start(self.currentexp))
 
-        self.change()
         self.root.mainloop()
 
-    def change(self, event=""):
-        if self.compt < len(self.exp):
-            if self.exp[self.compt][0] == "image":
-                image = Image.open(self.exp[self.compt][1])
-                image.thumbnail((800, 600), Image.ANTIALIAS)
-                tkimage = ImageTk.PhotoImage(image)
-                self.label.configure(image=tkimage, width=800, height=600)
-                self.label.image = tkimage
-                self.root.after(self.exp[self.compt][2], self.change)
-            elif self.exp[self.compt][0] == "text":
-                self.label.configure(text=self.exp[self.compt][1], image="", width=19, height=7,
-                                     font=self.customfont)
-                self.root.after(self.exp[self.compt][2], self.change)
-            elif self.exp[self.compt][0] == "pause":
-                self.root.bind("<Button-1>", self.change)
-                self.label.configure(text=self.exp[self.compt][1], image="", width=19, height=7,
-                                     font=self.customfont)
+    def start(self, expnb=0):
+        if not self.running_exp_thread.isAlive() and expnb < len(self.exp_list):
+            if expnb == len(self.exp_list) - 1:
+                self.running_exp_thread = threading.Thread(target=self.exp_list[expnb].start, args=[self, True])
+            else:
+                self.running_exp_thread = threading.Thread(target=self.exp_list[expnb].start, args=[self])
 
-        self.compt += 1
+            self.running_exp_thread.daemon = True
+            self.running_exp_thread.start()
+            self.currentexp += 1
+
+    def display_image(self, filename):
+        image = Image.open(filename)
+        image.thumbnail((800, 600), Image.ANTIALIAS)
+        tkimage = ImageTk.PhotoImage(image)
+        self.label.configure(image=tkimage, width=800, height=600)
+        self.label.image = tkimage
+
+    def display_text(self, text):
+        self.label.configure(text=text, image="", width=19, height=7,
+                             font=self.customfont)
 
 
-def gen_exp(img_list, word_list, img_speed, word_speed, img_nb, word_nb):
-    exp = []
-    compt_words = 0
-    compt_img = 0
+class Experiment:
+    def __init__(self, img_list, word_list, img_speed, word_speed, img_nb, word_nb):
+        self.exp = self.gen_exp(img_list, word_list, img_speed, word_speed, img_nb, word_nb)
 
-    if img_nb > len(img_list) or word_nb > len(word_list):
-        print(len(img_list))
-        raise ValueError("The given lists of images or words are not long enough")
+    def __getitem__(self, item):
+        return self.exp[item]
 
-    for i in range(img_nb):
-        exp.append(["image", img_list[compt_img], img_speed])
-        compt_img += 1
-        for j in range(word_nb):
-            exp.append(["text", word_list[compt_words], word_speed])
-            compt_words += 1
+    def start(self, display, last=False):
+        for step in self.exp:
+            print(step.value)
+            if step.type == "text":
+                display.display_text(step.value)
+            elif step.type == "image":
+                display.display_image(step.value)
 
-    return exp
+            time.sleep(float(step.length) / 1000)
+
+        if last:
+            display.display_text(display.end_mess)
+        else:
+            display.display_text(display.pause_mess)
+
+    @staticmethod
+    def gen_exp(img_list, word_list, img_speed, word_speed, img_nb, word_nb):
+        exp = []
+        compt_words = 0
+        compt_img = 0
+
+        if img_nb > len(img_list) or word_nb > len(word_list):
+            raise ValueError("The given lists of images or words are not long enough")
+
+        for i in range(img_nb):
+            exp.append(Step("image", img_list[compt_img], img_speed))
+            compt_img += 1
+            for j in range(word_nb):
+                exp.append(Step("text", word_list[compt_words], word_speed))
+                compt_words += 1
+
+        return exp
+
+
+class Step:
+    def __init__(self, step_type, value, length):
+        self.type = step_type
+        self.value = value
+        self.length = length
 
 
 def read_exp(f):
@@ -96,27 +132,30 @@ def read_exp(f):
         img_nb = int(nb_line[0])
         word_nb = int(nb_line[1])
 
-        return gen_exp(img_list, word_list, img_speed, word_speed, img_nb, word_nb)
+        return Experiment(img_list, word_list, img_speed, word_speed, img_nb, word_nb)
 
     except IndexError:
         return ""
 
 
 def read_config(filename):
-    exps = []
+    config = {}
+    experiment_list = []
 
     with open(filename, 'r') as f:
         pause_message = f.readline().split(":")[1].strip(" ")[:-1]
         f.readline()
 
-        exps += read_exp(f)
+        experiment_list.append(read_exp(f))
         while f.readline() == "\n":
-            exps.append(["pause", pause_message])
-            exps += read_exp(f)
+            experiment_list.append(read_exp(f))
 
-    print exps
-    return exps
+    config["p_mess"] = pause_message
+    config["list"] = experiment_list
+
+    return config
 
 
-app = App(read_config("config.txt"))
-app.mainloop()
+config = read_config("config.txt")
+app = App(config["list"], config["p_mess"])
+
