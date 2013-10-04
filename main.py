@@ -22,7 +22,7 @@ import mtTkinter as tk
 
 
 class App:
-    def __init__(self, exp_list, pause_message):
+    def __init__(self, exp_list, pause_message="Next experiment"):
         self.exp_list = exp_list
         self.pause_mess = pause_message
         self.end_mess = "End of the experiment !"
@@ -73,17 +73,17 @@ class App:
 
 
 class Experiment:
-    def __init__(self, img_list, word_list, img_speed, word_speed, img_nb, word_nb):
-        self.exp = self.gen_exp(img_list, word_list, img_speed, word_speed, img_nb, word_nb)
+    def __init__(self, steps=[]):
+        self.steps = steps
         self.current_step = 0
 
     def __getitem__(self, item):
-        return self.exp[item]
+        return self.steps[item]
 
     # Returns true if their is no more steps to do
     def do_next_step(self, display):
-        if self.current_step < len(self.exp):
-            step = self.exp[self.current_step]
+        if self.current_step < len(self.steps):
+            step = self.steps[self.current_step]
 
             if step.type == "text":
                 display.display_text(step.value, step.length)
@@ -101,25 +101,6 @@ class Experiment:
             return True
 
 
-    @staticmethod
-    def gen_exp(img_list, word_list, img_speed, word_speed, img_nb, word_nb):
-        exp = []
-        compt_words = 0
-        compt_img = 0
-
-        if img_nb > len(img_list) or word_nb > len(word_list):
-            raise ValueError("The given lists of images or words are not long enough")
-
-        for i in range(img_nb):
-            exp.append(Step("image", img_list[compt_img], img_speed))
-            compt_img += 1
-            for j in range(word_nb):
-                exp.append(Step("text", word_list[compt_words], word_speed))
-                compt_words += 1
-
-        return exp
-
-
 class Step:
     def __init__(self, step_type, value, length=0, action=""):
         self.type = step_type
@@ -128,50 +109,119 @@ class Step:
         self.action = action
 
 
-def read_exp(f):
-    try:
-        img_line = f.readline().split(":")
-        img_list = [x.strip(" ") for x in img_line[1].split(",")]
-        img_list[-1] = img_list[-1][:-1] #Strips the \n char at the end of the last filename
+class Parser:
+    def __init__(self, config_filename):
+        self.lines = []
 
-        word_line = f.readline().split(":")
-        word_list = [x.strip(" ") for x in word_line[1].split(",")]
-        word_list[-1] = word_list[-1][:-1] #Same thing
+        with open(config_filename, "r") as f:
+            line = f.readline()
+            while line:
+                self.lines.append(line)
+                line = f.readline()
 
-        speed_line = f.readline().split(":")[1].split(",")
-        speed_line = [x.strip(" ") for x in speed_line]
-        img_speed = int(speed_line[0])
-        word_speed = int(speed_line[1])
+        self.lines = self.remove_comments(self.lines)
+        self.lines = self.clean_up(self.lines)
+        self.vars = self.find_vars(self.lines)
+        self.lines = self.clean_vars(self.lines)
+        self.exp_list = self.find_exps(self.lines)
 
-        nb_line = f.readline().split(":")[1].split(",")
-        nb_line = [x.strip(" ") for x in nb_line]
-        img_nb = int(nb_line[0])
-        word_nb = int(nb_line[1])
+    @staticmethod
+    def remove_comments(lines):
+        return [x for x in lines if not x.startswith("//")]
 
-        return Experiment(img_list, word_list, img_speed, word_speed, img_nb, word_nb)
+    @staticmethod
+    def clean_up(lines):
+        while lines[0] == "\n":
+            lines = lines[1:]
 
-    except IndexError:
-        return ""
+        while lines[-1] == "\n":
+            lines = lines[:-1]
+        return lines
+
+    @staticmethod
+    def find_vars(lines):
+        vars = {}
+        var_lines = [x for x in lines if x.count("=") == 1]
+        for line in var_lines:
+            var_name = line.split("=")[0].strip(" ")
+
+            if line.split("=")[1].count(",") >= 1:
+                value = [x.strip(" ") for x in line.split("=")[1].split(
+                    ",")] # Splits the part of the line after the "=" by "," and removes extra spaces
+                value[-1] = value[-1][:-1] # Removes the extra \n at the end of the var value
+            else:
+                value = line.split("=")[1].strip(" ")[:-1] # Same idea
+
+            vars[var_name] = value
+        return vars
+
+    @staticmethod
+    def clean_vars(lines):
+        return [x for x in lines if x.count("=") == 0][1:]
+
+    def find_exps(self, lines):
+        #First we remove the blank lines separating the experiments
+        raw_exps = [x.lower() for x in lines if x != '\n']
+        exps = []
+
+        #We remove the \n terminating the line if there are any
+        for i in range(len(raw_exps)):
+            if raw_exps[i][-1] == '\n':
+                raw_exps[i] = raw_exps[i][:-1]
+
+        for exp in raw_exps:
+            #We look for "separated by", and split the line if there is one
+            parts = exp.split("separated by")
+
+            if parts[0].startswith("display"):
+                parts[0] = self.gen_exp_array(parts[0][8:-1])
+
+            for i in range(1, len(parts)):
+                parts[i] = self.gen_exp_array(parts[i], len(parts[i - 1]))
+
+            parts = self.mix_parts(parts)
+            exps.append(Experiment(parts))
+
+        return exps
 
 
-def read_config(filename):
-    config = {}
-    experiment_list = []
+    def gen_exp_array(self, raw_part, mult=1):
+        words = raw_part.strip(" ").split(" ")
+        steps = []
+        type = self.find_var_type(words[1])
 
-    with open(filename, 'r') as f:
-        pause_message = f.readline().split(":")[1].strip(" ")[:-1]
-        f.readline()
+        if len(words) == 2:
+            for i in range(int(words[0]) * mult):
+                #Looks for the i-nth element of the variable called (mod that var size to prevent errors)
+                step_val = self.vars[words[1]][i % len(self.vars[words[1]])]
+                steps.append(Step(type, step_val, 1000))
+        elif len(words) == 5:
+            speed = int(words[4])
+            for i in range(int(words[0]) * mult):
+                #Looks for the i-nth element of the variable called (mod that var size to prevent errors)
+                step_val = self.vars[words[1]][i % len(self.vars[words[1]])]
+                steps.append(Step(type, step_val, speed))
 
-        experiment_list.append(read_exp(f))
-        while f.readline() == "\n":
-            experiment_list.append(read_exp(f))
+        return steps
 
-    config["p_mess"] = pause_message
-    config["list"] = experiment_list
+    def mix_parts(self, parts):
+        while len(parts) > 1:
+            temp = []
+            inclu_size = len(parts[-1]) / len(parts[-2])
 
-    return config
+            for i in range(len(parts[-2])):
+                temp += [parts[-2][i]] + parts[-1][i * inclu_size:(i + 1) * inclu_size]
+
+            parts[-2] = temp
+            parts = parts[:-1]
+        return parts[0]
+
+    def find_var_type(self, var_name):
+        if type(self.vars[var_name]) == list and self.vars[var_name][0].endswith(".jpg"):
+            return "image"
+        elif type(self.vars[var_name]) == list:
+            return "text"
 
 
-config = read_config("config.txt")
-app = App(config["list"], config["p_mess"])
-
+p = Parser("config-h.txt")
+app = App(p.exp_list)
