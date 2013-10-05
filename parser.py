@@ -91,13 +91,17 @@ class Parser:
             #We look for "separated by", and split the line if there is one
             parts = exp.split("separated by")
 
+            #If the line starts with "display" we remove "display" from the line, and use the method to gen a part on the rest.
             if parts[0].startswith("display"):
                 parts[0] = self.gen_part_array(parts[0][8:-1])
 
+            #For the other parts, we directly use the method to gen parts array
             for i in range(1, len(parts)):
                 parts[i] = self.gen_part_array(parts[i], len(parts[i - 1]))
 
+            #We then mix the parts together in 1 final experiment.
             parts = self.mix_parts(parts)
+
             exps.append(Experiment(parts))
 
         return exps
