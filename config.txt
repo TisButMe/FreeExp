@@ -1,7 +1,7 @@
 // Exemple config file for freeExp
 //
-// You can define variables anywhere using variable_name = content
-// Spaces around punctuations do not matter, they are only there for ease of reading
+// You can define variables anywhere using variable_name = content (You can't have spaces in the name of the variables !)
+// Spaces around punctuations do not matter, they are only there for ease of reading (ie "a, b" is interpreted the same as "a,b" or "a , b" or even "a    ,b")
 // pause_message and end_message are special variables that will get directly interpreted by FreeExp as the message displayed between exps, and at the end of the exps
 // An empty lines must separate the variable declaration and the experiments, as well as every experiment after the first one.
 // Comments can be added by starting the line with // (These line won't be interpreted by FreeExp)

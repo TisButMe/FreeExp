@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd9d9b-d38c-45f5-96c2-079b85372f4b" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/config-h.txt" afterPath="$PROJECT_DIR$/config.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.txt" afterPath="$PROJECT_DIR$/config.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FreeExp.iws" />
@@ -59,7 +58,7 @@
       <file leaf-file-name="config.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="2122" selection-end="2122" vertical-scroll-proportion="0.820598" vertical-offset="226" max-vertical-offset="828">
+            <state line="6" column="98" selection-start="711" selection-end="711" vertical-scroll-proportion="-0.089701" vertical-offset="162" max-vertical-offset="828">
               <folding />
             </state>
           </provider>
@@ -94,11 +93,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/config.txt" />
         <option value="$PROJECT_DIR$/experiment.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/parser.py" />
         <option value="$PROJECT_DIR$/config-h.txt" />
+        <option value="$PROJECT_DIR$/config.txt" />
       </list>
     </option>
   </component>
@@ -419,7 +418,11 @@
       <created>1380996620621</created>
       <updated>1380996620621</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Changed the config.txt to showcase all the features of the language created so far. Renamed it to the simpler &quot;config.txt&quot;">
+      <created>1380997164427</created>
+      <updated>1380997164427</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -485,7 +488,8 @@
     <MESSAGE value="There is now a separate method to gen an experiment from a line.&#10;&#10;Also renamed var type -&gt; step-type in gen_part_array(..) in order not to shadow the built-in type function." />
     <MESSAGE value="The parser now correctly differenciates multi-step experiments from different experiments (that are separated by at least 1 blank line)." />
     <MESSAGE value="Corrected a bug where a space was always assumed after the variable name in the first part of the line, where it's not in the doc. Now behaves as expected." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected a bug where a space was always assumed after the variable name in the first part of the line, where it's not in the doc. Now behaves as expected." />
+    <MESSAGE value="Changed the config.txt to showcase all the features of the language created so far. Renamed it to the simpler &quot;config.txt&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the config.txt to showcase all the features of the language created so far. Renamed it to the simpler &quot;config.txt&quot;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -606,7 +610,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="2122" selection-end="2122" vertical-scroll-proportion="0.820598" vertical-offset="226" max-vertical-offset="828">
+        <state line="6" column="98" selection-start="711" selection-end="711" vertical-scroll-proportion="-0.089701" vertical-offset="162" max-vertical-offset="828">
           <folding />
         </state>
       </provider>
