@@ -33,6 +33,16 @@ class Parser:
         self.lines = self.clean_vars(self.lines)
         self.exp_list = self.find_exps(self.lines)
 
+        if "pause_message" in self.vars.keys():
+            self.pause_message = self.vars["pause_message"]
+        else:
+            self.pause_message = "Next experiment"
+
+        if "end_message" in self.vars.keys():
+            self.end_message = self.vars["end_message"]
+        else:
+            self.end_message = "End of the experiments"
+
     @staticmethod
     def remove_comments(lines):
         return [x for x in lines if not x.startswith("//")]

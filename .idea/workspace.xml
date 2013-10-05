@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd9d9b-d38c-45f5-96c2-079b85372f4b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config-h.txt" afterPath="$PROJECT_DIR$/config-h.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser.py" afterPath="$PROJECT_DIR$/parser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FreeExp.iws" />
@@ -26,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="44" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.41463414" vertical-offset="627" max-vertical-offset="1494">
+            <state line="77" column="0" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.0" vertical-offset="501" max-vertical-offset="1494">
               <folding>
                 <element signature="e#702#714#0" expanded="true" />
               </folding>
@@ -40,16 +42,16 @@
       <file leaf-file-name="experiment.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/experiment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
+            <state line="11" column="37" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parser.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="parser.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2466">
+            <state line="40" column="45" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.029268293" vertical-offset="702" max-vertical-offset="2646">
               <folding />
             </state>
           </provider>
@@ -67,7 +69,7 @@
       <file leaf-file-name="config-h.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config-h.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="67" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+            <state line="11" column="56" selection-start="738" selection-end="738" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
               <folding />
             </state>
           </provider>
@@ -103,10 +105,10 @@
       <list>
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/config.txt" />
-        <option value="$PROJECT_DIR$/config-h.txt" />
         <option value="$PROJECT_DIR$/experiment.py" />
-        <option value="$PROJECT_DIR$/parser.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/parser.py" />
+        <option value="$PROJECT_DIR$/config-h.txt" />
       </list>
     </option>
   </component>
@@ -379,7 +381,11 @@
       <created>1380976983146</created>
       <updated>1380976983146</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Created 2 separate .py files for the Parser class and the classes related to the experiments.&#10;&#10;When displaying the end message, the user can now click the window to quit the program.">
+      <created>1380977027753</created>
+      <updated>1380977027753</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -438,7 +444,8 @@
     <MESSAGE value="Changed the import from mtTinker to Tkinter as multithreading isn't needed" />
     <MESSAGE value="Removed the legacy config from the repo." />
     <MESSAGE value="Created 2 separate .py files for the Parser class and the classes related to the experiments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created 2 separate .py files for the Parser class and the classes related to the experiments." />
+    <MESSAGE value="Created 2 separate .py files for the Parser class and the classes related to the experiments.&#10;&#10;When displaying the end message, the user can now click the window to quit the program." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created 2 separate .py files for the Parser class and the classes related to the experiments.&#10;&#10;When displaying the end message, the user can now click the window to quit the program." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -527,13 +534,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config-h.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="67" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6210">
@@ -541,26 +541,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parser.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="743" selection-end="743" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2466">
+        <state line="77" column="0" selection-start="2790" selection-end="2790" vertical-scroll-proportion="0.0" vertical-offset="501" max-vertical-offset="1494">
+          <folding>
+            <element signature="e#702#714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-h.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="56" selection-start="738" selection-end="738" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0" vertical-offset="411" max-vertical-offset="1026">
+        <state line="11" column="37" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="44" selection-start="1781" selection-end="1781" vertical-scroll-proportion="0.41463414" vertical-offset="627" max-vertical-offset="1494">
-          <folding>
-            <element signature="e#702#714#0" expanded="true" />
-          </folding>
+        <state line="40" column="45" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.029268293" vertical-offset="702" max-vertical-offset="2646">
+          <folding />
         </state>
       </provider>
     </entry>

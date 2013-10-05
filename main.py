@@ -22,10 +22,10 @@ from parser import Parser
 
 
 class App:
-    def __init__(self, exp_list, pause_message="Next experiment"):
+    def __init__(self, exp_list, pause_message, end_message):
         self.exp_list = exp_list
         self.pause_mess = pause_message
-        self.end_mess = "End of the experiment !"
+        self.end_mess = end_message
         self.currentexp = 0
 
         self.root = tk.Tk()
@@ -74,4 +74,4 @@ class App:
 
 
 p = Parser("config-h.txt")
-app = App(p.exp_list)
+app = App(p.exp_list, p.pause_message, p.end_message)

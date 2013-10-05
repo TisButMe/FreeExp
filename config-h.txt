@@ -6,7 +6,7 @@
 // An empty lines must separate the variable declaration and the experiments, as well as every experiment after the first one.
 // Comments can be added by starting the line with // (These line won't be interpreted by FreeExp)
 
-pause_message = Next exp ?
+pause_message = Go to next exp ?
 end_message = End of the experiments
 images = boum.jpg, test.jpg
 words = Thomas, est, trop, beau, Thomas, est, trop, fort
