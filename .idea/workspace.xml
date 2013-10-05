@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1bd9d9b-d38c-45f5-96c2-079b85372f4b" name="Default" comment="Added comments for clarity">
+    <list default="true" id="d1bd9d9b-d38c-45f5-96c2-079b85372f4b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config-h.txt" afterPath="$PROJECT_DIR$/config-h.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser.py" afterPath="$PROJECT_DIR$/parser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="25" selection-start="2648" selection-end="2648" vertical-scroll-proportion="0.6780488" vertical-offset="861" max-vertical-offset="1476">
+            <state line="63" column="57" selection-start="2333" selection-end="2333" vertical-scroll-proportion="0.0" vertical-offset="879" max-vertical-offset="1494">
               <folding>
                 <element signature="e#702#714#0" expanded="true" />
               </folding>
@@ -39,10 +38,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parser.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="config-h.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config-h.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="0" selection-start="1535" selection-end="1535" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parser.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="38" selection-start="3627" selection-end="3627" vertical-scroll-proportion="0.0" vertical-offset="1505" max-vertical-offset="2862">
+            <state line="110" column="38" selection-start="4087" selection-end="4087" vertical-scroll-proportion="-0.2813008" vertical-offset="2153" max-vertical-offset="2862">
               <folding />
             </state>
           </provider>
@@ -87,10 +95,10 @@
       <list>
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/config.txt" />
-        <option value="$PROJECT_DIR$/config-h.txt" />
         <option value="$PROJECT_DIR$/experiment.py" />
-        <option value="$PROJECT_DIR$/parser.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/config-h.txt" />
+        <option value="$PROJECT_DIR$/parser.py" />
       </list>
     </option>
   </component>
@@ -403,7 +411,11 @@
       <created>1380994185778</created>
       <updated>1380994185778</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="The parser now correctly differenciates multi-step experiments from different experiments (that are separated by at least 1 blank line).">
+      <created>1380996402195</created>
+      <updated>1380996402195</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -467,7 +479,8 @@
     <MESSAGE value="Renamed a method to a more apt name" />
     <MESSAGE value="Added comments for clarity" />
     <MESSAGE value="There is now a separate method to gen an experiment from a line.&#10;&#10;Also renamed var type -&gt; step-type in gen_part_array(..) in order not to shadow the built-in type function." />
-    <option name="LAST_COMMIT_MESSAGE" value="There is now a separate method to gen an experiment from a line.&#10;&#10;Also renamed var type -&gt; step-type in gen_part_array(..) in order not to shadow the built-in type function." />
+    <MESSAGE value="The parser now correctly differenciates multi-step experiments from different experiments (that are separated by at least 1 blank line)." />
+    <option name="LAST_COMMIT_MESSAGE" value="The parser now correctly differenciates multi-step experiments from different experiments (that are separated by at least 1 blank line)." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -563,9 +576,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="57" selection-start="2333" selection-end="2333" vertical-scroll-proportion="0.0" vertical-offset="879" max-vertical-offset="1494">
+          <folding>
+            <element signature="e#702#714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config-h.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="67" selection-start="978" selection-end="978" vertical-scroll-proportion="0.47840533" vertical-offset="0" max-vertical-offset="602">
+        <state line="27" column="0" selection-start="1535" selection-end="1535" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
           <folding />
         </state>
       </provider>
@@ -579,17 +601,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="38" selection-start="3627" selection-end="3627" vertical-scroll-proportion="0.0" vertical-offset="1505" max-vertical-offset="2862">
+        <state line="110" column="38" selection-start="4087" selection-end="4087" vertical-scroll-proportion="-0.2813008" vertical-offset="2153" max-vertical-offset="2862">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="25" selection-start="2648" selection-end="2648" vertical-scroll-proportion="0.6780488" vertical-offset="861" max-vertical-offset="1476">
-          <folding>
-            <element signature="e#702#714#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

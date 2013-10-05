@@ -105,7 +105,7 @@ class Parser:
 
         #If the line starts with "display" we remove "display" from the line, and use the method to gen a part on the rest.
         if parts[0].startswith("display"):
-            parts[0] = self.gen_part_array(parts[0][8:-1])
+            parts[0] = self.gen_part_array(parts[0][8:])
 
         #For the other parts, we directly use the method to gen parts array
         for i in range(1, len(parts)):
