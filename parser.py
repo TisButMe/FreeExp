@@ -88,41 +88,42 @@ class Parser:
                 raw_exps[i] = raw_exps[i][:-1]
 
         for exp in raw_exps:
-            #We look for "separated by", and split the line if there is one
-            parts = exp.split("separated by")
-
-            #If the line starts with "display" we remove "display" from the line, and use the method to gen a part on the rest.
-            if parts[0].startswith("display"):
-                parts[0] = self.gen_part_array(parts[0][8:-1])
-
-            #For the other parts, we directly use the method to gen parts array
-            for i in range(1, len(parts)):
-                parts[i] = self.gen_part_array(parts[i], len(parts[i - 1]))
-
-            #We then mix the parts together in 1 final experiment.
-            parts = self.mix_parts(parts)
-
-            exps.append(Experiment(parts))
+            exps.append(self.gen_exp_from_line(exp))
 
         return exps
 
+    def gen_exp_from_line(self, line):
+        #We look for "separated by", and split the line if there is one
+        parts = line.split("separated by")
+
+        #If the line starts with "display" we remove "display" from the line, and use the method to gen a part on the rest.
+        if parts[0].startswith("display"):
+            parts[0] = self.gen_part_array(parts[0][8:-1])
+
+        #For the other parts, we directly use the method to gen parts array
+        for i in range(1, len(parts)):
+            parts[i] = self.gen_part_array(parts[i], len(parts[i - 1]))
+
+        #We then mix the parts together in 1 final experiment.
+        parts = self.mix_parts(parts)
+        return Experiment(parts)
 
     def gen_part_array(self, raw_part, mult=1):
         words = raw_part.strip(" ").split(" ")
         steps = []
-        type = self.find_var_type(words[1])
+        step_type = self.find_var_type(words[1])
 
         if len(words) == 2:
             for i in range(int(words[0]) * mult):
                 #Looks for the i-nth element of the variable called (mod that var size to prevent errors)
                 step_val = self.vars[words[1]][i % len(self.vars[words[1]])]
-                steps.append(Step(type, step_val, 1000))
+                steps.append(Step(step_type, step_val, 1000))
         elif len(words) == 5:
             speed = int(words[4])
             for i in range(int(words[0]) * mult):
                 #Looks for the i-nth element of the variable called (mod that var size to prevent errors)
                 step_val = self.vars[words[1]][i % len(self.vars[words[1]])]
-                steps.append(Step(type, step_val, speed))
+                steps.append(Step(step_type, step_val, speed))
 
         return steps
 
