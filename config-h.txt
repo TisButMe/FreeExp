@@ -14,6 +14,7 @@ words2 = Je, suis, vraiment, un, grand, malade, c'est, fou
 
 //This is the description of an experiment.
 Display 2 images with speed 500 separated by 4 words with speed 500
+Display 2 images with speed 400 separated by 4 words with speed 400
 
 //keywords : (case doesn't matter)
 // -> Display x y (with speed z): FreeExp will display x element from the y variable.

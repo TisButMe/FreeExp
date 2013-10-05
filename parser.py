@@ -78,17 +78,24 @@ class Parser:
         return [x for x in lines if x.count("=") == 0][1:]
 
     def find_exps(self, lines):
-        #First we remove the blank lines separating the experiments
-        raw_exps = [x.lower() for x in lines if x != '\n']
-        exps = []
+        #First we remove the extra blank lines separating the experiments
+        raw_exps = [lines[0].lower()] + [lines[i].lower() for i in range(1, len(lines)) if
+                                         not (lines[i] == '\n' and lines[i - 1] == '\n')]
+
+        exps = [Experiment() for i in range(raw_exps.count('\n') + 1)]
 
         #We remove the \n terminating the line if there are any
         for i in range(len(raw_exps)):
             if raw_exps[i][-1] == '\n':
                 raw_exps[i] = raw_exps[i][:-1]
 
+        counter = 0
         for exp in raw_exps:
-            exps.append(self.gen_exp_from_line(exp))
+            if exp == '':
+                counter += 1
+                continue
+                #Can't change this line to a +=, it somehow bypasses the [counter] and adds to every exp in exps (WTF ?)
+            exps[counter].steps = exps[counter].steps + self.gen_exp_from_line(exp).steps
 
         return exps
 
