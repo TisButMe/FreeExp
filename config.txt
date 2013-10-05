@@ -10,11 +10,10 @@ pause_message = Go to next exp ?
 end_message = End of the experiments
 images = boum.jpg, test.jpg
 words = Thomas, est, trop, beau, Thomas, est, trop, fort
-words2 = Je, suis, vraiment, un, grand, malade, c'est, fou
+words_again = I, like, ponies, and, rainbows
 
 //This is the description of an experiment.
-Display 2 images with speed 500 separated by 4 words with speed 500
-Display 2 images with speed 400 separated by 4 words with speed 400
+Display 2 images with speed 300 separated by 4 words with speed 300
 
 //keywords : (case doesn't matter)
 // -> Display x y (with speed z): FreeExp will display x element from the y variable.
@@ -24,4 +23,18 @@ Display 2 images with speed 400 separated by 4 words with speed 400
 //NOTE : If the elements of the list end with ".jpg", they will be intepreted as images automatically, and loaded.
 //NOTE 2 : You can only use "=" in the variables lines, as they are used to intepret them as variable lines !
 
-Display 2 images with speed 700 separated by 4 words2 with speed 700
+//You can only display stuff :
+Display 2 words
+
+//And set their timings : (Note: if you try to display more elements than the list contains, it will loop over itself)
+Display 4 images with speed 200
+
+//You can use elements from another list to separate the elements displayed :
+Display 5 words with speed 200 separated by 2 images with speed 400
+
+//You can chain the "separated by" statements if you want :
+Display 2 words separated by 2 images with speed 200 separated by 1 words_again with speed
+
+//You can do multi-steps experiments as well (there won't be a pause between these) :
+Display 2 words with speed 200
+Display 4 images with speed 400

@@ -73,5 +73,5 @@ class App:
             self.root.after(for_time, self.continue_exec)
 
 
-p = Parser("config-h.txt")
+p = Parser("config.txt")
 app = App(p.exp_list, p.pause_message, p.end_message)
