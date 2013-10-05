@@ -92,10 +92,10 @@ class Parser:
             parts = exp.split("separated by")
 
             if parts[0].startswith("display"):
-                parts[0] = self.gen_exp_array(parts[0][8:-1])
+                parts[0] = self.gen_part_array(parts[0][8:-1])
 
             for i in range(1, len(parts)):
-                parts[i] = self.gen_exp_array(parts[i], len(parts[i - 1]))
+                parts[i] = self.gen_part_array(parts[i], len(parts[i - 1]))
 
             parts = self.mix_parts(parts)
             exps.append(Experiment(parts))
@@ -103,7 +103,7 @@ class Parser:
         return exps
 
 
-    def gen_exp_array(self, raw_part, mult=1):
+    def gen_part_array(self, raw_part, mult=1):
         words = raw_part.strip(" ").split(" ")
         steps = []
         type = self.find_var_type(words[1])
