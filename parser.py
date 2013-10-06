@@ -100,6 +100,14 @@ class Parser:
         return exps
 
     def gen_exp_from_line(self, line):
+        #We first look for commands
+        if line.count(".") >= 1:
+            commands = [x.lower().strip(" ") for x in
+                        line.split(".")[1:]] #We don't want the first part, whihc isn't a command.
+            line = line.split(".")[0]
+        else:
+            commands = []
+
         #We look for "separated by", and split the line if there is one
         parts = line.split("separated by")
 
@@ -113,6 +121,17 @@ class Parser:
 
         #We then mix the parts together in 1 final experiment.
         parts = self.mix_parts(parts)
+
+        #We then apply the commands:
+        for command in commands:
+            if command.startswith("use blanks"):
+                if command.count("with speed") == 0:
+                    to_add = [Step("text", "", 1000) for i in range(len(parts))]
+                    parts = self.mix_parts([parts, to_add])
+                else:
+                    to_add = [Step("text", "", command.split(" ")[-1]) for i in range(len(parts))]
+                    parts = self.mix_parts([parts, to_add])
+
         return Experiment(parts)
 
     def gen_part_array(self, raw_part, mult=1):

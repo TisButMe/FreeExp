@@ -13,10 +13,10 @@ words = Thomas, est, trop, beau, Thomas, est, trop, fort
 words_again = I, like, ponies, and, rainbows
 
 //This is the description of an experiment.
-Display 2 images with speed 300 separated by 4 words with speed 300
+Display 2 images with speed 300 separated by 4 words with speed 300.
 
 //keywords : (case doesn't matter)
-// -> Display x y (with speed z): FreeExp will display x element from the y variable.
+// -> display x y (with speed z): FreeExp will display x element from the y variable.
 //                              : You can define the speed (in ms on screen). If not defined, default is 1000ms
 // -> separated by x y (with speed z): Optional, will put x objects from y between the primary objects displayed.
 //
@@ -33,8 +33,15 @@ Display 4 images with speed 200
 Display 5 words with speed 200 separated by 2 images with speed 400
 
 //You can chain the "separated by" statements if you want :
-Display 2 words separated by 2 images with speed 200 separated by 1 words_again with speed
+Display 2 words separated by 2 images with speed 200 separated by 1 words_again with speed 300
 
 //You can do multi-steps experiments as well (there won't be a pause between these) :
 Display 2 words with speed 200
 Display 4 images with speed 400
+//Note : if you use the same list of words/images twice, it will start from the beginning again.
+
+//You can also use commands:
+Display 4 images with speed 400 separated by 2 words with speed 400. Use blanks with speed 100.
+
+//List of the commands available for use :
+//  -> use blanks (with speed x): will create blanks of length x ms between each display
