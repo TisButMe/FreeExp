@@ -125,12 +125,13 @@ class Parser:
         #We then apply the commands:
         for command in commands:
             if command.startswith("use blanks"):
-                if command.count("with speed") == 0:
-                    to_add = [Step("text", "", 1000) for i in range(len(parts))]
-                    parts = self.mix_parts([parts, to_add])
+                speed = re.search(r"with speed\s+(\d+)", command)
+                if speed:
+                    to_add = [Step("text", "", speed.group(1)) for i in range(len(parts))]
                 else:
-                    to_add = [Step("text", "", command.split(" ")[-1]) for i in range(len(parts))]
-                    parts = self.mix_parts([parts, to_add])
+                    to_add = [Step("text", "", 1000) for i in range(len(parts))]
+
+                parts = self.mix_parts([parts, to_add])
 
         return Experiment(parts)
 
