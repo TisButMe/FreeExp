@@ -13,12 +13,13 @@ words = Thomas, est, trop, beau, Thomas, est, trop, fort
 words_again = I, like, ponies, and, rainbows
 
 //This is the description of an experiment.
-Display 2 images with speed 300 separated by 4 words with speed 300.
+Display 2 images with speed 300 separated by 4 random words with speed 300.
 
 //keywords : (case doesn't matter)
-// -> display x y (with speed z): FreeExp will display x element from the y variable.
-//                              : You can define the speed (in ms on screen). If not defined, default is 1000ms
-// -> separated by x y (with speed z): Optional, will put x objects from y between the primary objects displayed.
+// -> display x (random) y (with speed z): FreeExp will display x element from the y variable.
+//                                         You can define the speed (in ms on screen). If not defined, default is 1000ms
+//                                         You can also add the "random" keyword, which will display y in random order
+// -> separated by x (random) y (with speed z): Optional, will put x objects from y between the primary objects displayed.
 //
 //NOTE : If the elements of the list end with ".jpg", they will be intepreted as images automatically, and loaded.
 //NOTE 2 : You can only use "=" in the variables lines, as they are used to intepret them as variable lines !

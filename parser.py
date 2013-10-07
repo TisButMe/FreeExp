@@ -15,6 +15,8 @@ __author__ = 'Thomas Poinsot'
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import re
+import copy
+import random
 
 from experiment import Experiment, Step
 
@@ -137,16 +139,23 @@ class Parser:
 
     def gen_part_array(self, raw_part, mult=1):
         steps = []
-        regexp = re.search(r"(\d+)\s+(\w+)(?:\s+with speed\s+(\d+))?", raw_part)
+        regexp = re.search(r"(\d+)\s+(random\s+)?(\w+)(?:\s+with speed\s+(\d+))?", raw_part)
 
         nb = int(regexp.group(1))
-        var_name = regexp.group(2)
-        speed = int(regexp.group(3)) if regexp.group(3) else 1000
+        random_step = True if regexp.group(2) else False
+        var_name = regexp.group(3)
+        speed = int(regexp.group(4)) if regexp.group(4) else 1000
         step_type = self.find_var_type(var_name)
+
+        if random_step:
+            current_vars = copy.deepcopy(self.vars)
+            random.shuffle(current_vars[var_name])
+        else:
+            current_vars = self.vars
 
         for i in range(nb * mult):
             #Looks for the i-nth element of the variable called (mod that var size to prevent errors)
-            step_val = self.vars[var_name][i % len(self.vars[var_name])]
+            step_val = current_vars[var_name][i % len(current_vars[var_name])]
             steps.append(Step(step_type, step_val, speed))
 
         return steps

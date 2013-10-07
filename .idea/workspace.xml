@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1bd9d9b-d38c-45f5-96c2-079b85372f4b" name="Default" comment="">
+    <list default="true" id="d1bd9d9b-d38c-45f5-96c2-079b85372f4b" name="Default" comment="Rewrote gen_part_array(..) to use regexp. Way simpler/clearer now.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.txt" afterPath="$PROJECT_DIR$/config.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser.py" afterPath="$PROJECT_DIR$/parser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,7 +30,7 @@
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="30" selection-start="2498" selection-end="2498" vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1422">
+            <state line="76" column="0" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1422">
               <folding />
             </state>
           </provider>
@@ -38,7 +39,7 @@
       <file leaf-file-name="parser.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="48" selection-start="5106" selection-end="5106" vertical-scroll-proportion="0.7723577" vertical-offset="2045" max-vertical-offset="3222">
+            <state line="151" column="50" selection-start="5499" selection-end="5499" vertical-scroll-proportion="0.70731705" vertical-offset="2283" max-vertical-offset="3330">
               <folding>
                 <element signature="e#702#711#0" expanded="true" />
               </folding>
@@ -46,10 +47,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="random.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python2.7/random.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="287" column="0" selection-start="10917" selection-end="10917" vertical-scroll-proportion="0.0" vertical-offset="4835" max-vertical-offset="16254">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="config.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="954">
+            <state line="15" column="75" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.0" vertical-offset="370" max-vertical-offset="972">
               <folding />
             </state>
           </provider>
@@ -86,9 +96,9 @@
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/experiment.py" />
         <option value="$PROJECT_DIR$/config-h.txt" />
-        <option value="$PROJECT_DIR$/config.txt" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/parser.py" />
+        <option value="$PROJECT_DIR$/config.txt" />
       </list>
     </option>
   </component>
@@ -430,7 +440,15 @@
       <created>1381146874739</created>
       <updated>1381146874739</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Now parses the command using regexp (simpler)">
+      <created>1381147296581</created>
+      <updated>1381147296581</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Rewrote gen_part_array(..) to use regexp. Way simpler/clearer now.">
+      <created>1381148062772</created>
+      <updated>1381148062772</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -444,6 +462,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959569" sideWeight="0.67083335" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.49973047" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959569" sideWeight="0.67083335" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.50026953" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.49973047" order="6" side_tool="false" content_ui="tabs" />
@@ -453,7 +472,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.49973047" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -501,7 +519,9 @@
     <MESSAGE value="Added commands, and the &quot;use blanks&quot; command." />
     <MESSAGE value="Now uses RegExps to extract variables." />
     <MESSAGE value="Now uses regexp when simpler in find_exps(..)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now uses regexp when simpler in find_exps(..)" />
+    <MESSAGE value="Now parses the command using regexp (simpler)" />
+    <MESSAGE value="Rewrote gen_part_array(..) to use regexp. Way simpler/clearer now." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rewrote gen_part_array(..) to use regexp. Way simpler/clearer now." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -511,13 +531,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="68" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="20" selection-start="764" selection-end="764" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="4176">
@@ -590,23 +603,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/lib/python2.7/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="287" column="0" selection-start="10917" selection-end="10917" vertical-scroll-proportion="0.0" vertical-offset="4835" max-vertical-offset="16254">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="30" selection-start="2498" selection-end="2498" vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1422">
+        <state line="76" column="0" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1422">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="954">
+        <state line="15" column="75" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="972">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="48" selection-start="5106" selection-end="5106" vertical-scroll-proportion="0.7723577" vertical-offset="2045" max-vertical-offset="3222">
+        <state line="151" column="50" selection-start="5499" selection-end="5499" vertical-scroll-proportion="0.70731705" vertical-offset="2283" max-vertical-offset="3330">
           <folding>
             <element signature="e#702#711#0" expanded="true" />
           </folding>
