@@ -136,21 +136,18 @@ class Parser:
         return Experiment(parts)
 
     def gen_part_array(self, raw_part, mult=1):
-        words = raw_part.strip(" ").split(" ")
         steps = []
-        step_type = self.find_var_type(words[1])
+        regexp = re.search(r"(\d+)\s+(\w+)(?:\s+with speed\s+(\d+))?", raw_part)
 
-        if len(words) == 2:
-            for i in range(int(words[0]) * mult):
-                #Looks for the i-nth element of the variable called (mod that var size to prevent errors)
-                step_val = self.vars[words[1]][i % len(self.vars[words[1]])]
-                steps.append(Step(step_type, step_val, 1000))
-        elif len(words) == 5:
-            speed = int(words[4])
-            for i in range(int(words[0]) * mult):
-                #Looks for the i-nth element of the variable called (mod that var size to prevent errors)
-                step_val = self.vars[words[1]][i % len(self.vars[words[1]])]
-                steps.append(Step(step_type, step_val, speed))
+        nb = int(regexp.group(1))
+        var_name = regexp.group(2)
+        speed = int(regexp.group(3)) if regexp.group(3) else 1000
+        step_type = self.find_var_type(var_name)
+
+        for i in range(nb * mult):
+            #Looks for the i-nth element of the variable called (mod that var size to prevent errors)
+            step_val = self.vars[var_name][i % len(self.vars[var_name])]
+            steps.append(Step(step_type, step_val, speed))
 
         return steps
 
