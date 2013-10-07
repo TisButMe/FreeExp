@@ -87,8 +87,7 @@ class Parser:
 
         #We remove the \n terminating the line if there are any
         for i in range(len(raw_exps)):
-            if raw_exps[i][-1] == '\n':
-                raw_exps[i] = raw_exps[i][:-1]
+            raw_exps[i] = re.match(r"(.*)\n?", raw_exps[i]).group(1)
 
         counter = 0
         for exp in raw_exps:
@@ -104,7 +103,7 @@ class Parser:
         #We first look for commands
         if line.count(".") >= 1:
             commands = [x.lower().strip(" ") for x in
-                        line.split(".")[1:]] #We don't want the first part, whihc isn't a command.
+                        line.split(".")[1:]] #We don't want the first part, which isn't a command.
             line = line.split(".")[0]
         else:
             commands = []
