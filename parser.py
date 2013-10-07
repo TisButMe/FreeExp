@@ -14,6 +14,8 @@ __author__ = 'Thomas Poinsot'
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import re
+
 from experiment import Experiment, Step
 
 
@@ -59,18 +61,17 @@ class Parser:
     @staticmethod
     def find_vars(lines):
         vars = {}
-        var_lines = [x for x in lines if x.count("=") == 1]
-        for line in var_lines:
-            var_name = line.split("=")[0].strip(" ")
+        for line in [l for l in lines if re.search(r"=", l)]:
+            regexp = re.compile(r"^\s*(\w+)\s*=\s*(.*\n?)")
+            var_name = regexp.match(line).group(1)
+            var_value = regexp.match(line).group(2)
 
-            if line.split("=")[1].count(",") >= 1:
-                value = [x.strip(" ") for x in line.split("=")[1].split(
-                    ",")] # Splits the part of the line after the "=" by "," and removes extra spaces
-                value[-1] = value[-1][:-1] # Removes the extra \n at the end of the var value
+            if re.search(r",", var_value):
+                var_value = re.findall(r"\s*(\w+(?:\..{3})?)\s*(?:\n|,)", var_value)
             else:
-                value = line.split("=")[1].strip(" ")[:-1] # Same idea
+                var_value = re.match(r"(.*)\n", var_value).group(1)
 
-            vars[var_name] = value
+            vars[var_name] = var_value
         return vars
 
     @staticmethod
