@@ -148,14 +148,14 @@ class Parser:
         step_type = self.find_var_type(var_name)
 
         if random_step:
-            current_vars = copy.deepcopy(self.vars)
-            random.shuffle(current_vars[var_name])
+            current_var = copy.deepcopy(self.vars[var_name])
+            random.shuffle(current_var)
         else:
-            current_vars = self.vars
+            current_var = self.vars[var_name]
 
         for i in range(nb * mult):
             #Looks for the i-nth element of the variable called (mod that var size to prevent errors)
-            step_val = current_vars[var_name][i % len(current_vars[var_name])]
+            step_val = current_var[i % len(current_var)]
             steps.append(Step(step_type, step_val, speed))
 
         return steps
