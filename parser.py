@@ -76,9 +76,8 @@ class Parser:
             vars[var_name] = var_value
         return vars
 
-    @staticmethod
-    def clean_vars(lines):
-        return [x for x in lines if x.count("=") == 0][1:]
+    def clean_vars(self, lines):
+        return self.clean_up([x for x in lines if x.count("=") == 0])
 
     def find_exps(self, lines):
         #First we remove the extra blank lines separating the experiments
