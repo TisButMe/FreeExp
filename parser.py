@@ -64,14 +64,14 @@ class Parser:
     def find_vars(lines):
         vars = {}
         for line in [l for l in lines if re.search(r"=", l)]:
-            regexp = re.compile(r"^\s*(\w+)\s*=\s*(.*\n?)")
-            var_name = regexp.match(line).group(1)
-            var_value = regexp.match(line).group(2)
+            regexp = re.compile(r"^\s*(\w+)\s*=\s*(.+\n?)").match(line)
+            var_name = regexp.group(1)
+            var_value = regexp.group(2)
 
             if re.search(r",", var_value):
-                var_value = re.findall(r"\s*(\w+(?:\..{3})?)\s*(?:\n|,)", var_value)
+                var_value = re.findall(r"\s*(\w+(?:\..{3})?)\s*(?:\n?|,)", var_value)
             else:
-                var_value = re.match(r"(.*)\n", var_value).group(1)
+                var_value = re.match(r"(.+)\n?", var_value).group(1)
 
             vars[var_name] = var_value
         return vars

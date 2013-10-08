@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1bd9d9b-d38c-45f5-96c2-079b85372f4b" name="Default" comment="Rewrote gen_part_array(..) to use regexp. Way simpler/clearer now.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.txt" afterPath="$PROJECT_DIR$/config.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FreeExp.iml" afterPath="$PROJECT_DIR$/.idea/FreeExp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser.py" afterPath="$PROJECT_DIR$/parser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -30,7 +32,7 @@
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1422">
+            <state line="53" column="36" selection-start="1945" selection-end="1945" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1422">
               <folding />
             </state>
           </provider>
@@ -39,7 +41,7 @@
       <file leaf-file-name="parser.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="50" selection-start="5499" selection-end="5499" vertical-scroll-proportion="0.70731705" vertical-offset="2283" max-vertical-offset="3330">
+            <state line="75" column="38" selection-start="2470" selection-end="2470" vertical-scroll-proportion="0.6437659" vertical-offset="1097" max-vertical-offset="3330">
               <folding>
                 <element signature="e#702#711#0" expanded="true" />
               </folding>
@@ -47,19 +49,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="random.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python2.7/random.py">
+      <file leaf-file-name="config.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="287" column="0" selection-start="10917" selection-end="10917" vertical-scroll-proportion="0.0" vertical-offset="4835" max-vertical-offset="16254">
+            <state line="48" column="0" selection-start="2765" selection-end="2765" vertical-scroll-proportion="0.0" vertical-offset="579" max-vertical-offset="972">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.txt">
+      <file leaf-file-name="experiment.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/experiment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="75" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.0" vertical-offset="370" max-vertical-offset="972">
+            <state line="33" column="48" selection-start="1245" selection-end="1250" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
               <folding />
             </state>
           </provider>
@@ -97,16 +99,16 @@
         <option value="$PROJECT_DIR$/experiment.py" />
         <option value="$PROJECT_DIR$/config-h.txt" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/parser.py" />
         <option value="$PROJECT_DIR$/config.txt" />
+        <option value="$PROJECT_DIR$/parser.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="64" />
     <option name="y" value="-4" />
-    <option name="width" value="1857" />
-    <option name="height" value="1085" />
+    <option name="width" value="1303" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -134,7 +136,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -155,6 +156,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,26 +454,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
+    <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.49973047" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959569" sideWeight="0.67083335" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2490392" sideWeight="0.6712963" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.49973047" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959569" sideWeight="0.67083335" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.50026953" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.49973047" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287037" sideWeight="0.49973047" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.49973047" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.49973047" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959569" sideWeight="0.67083335" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -591,42 +593,40 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615" />
       </provider>
     </entry>
+    <entry file="file:///usr/lib/python2.7/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="287" column="0" selection-start="10917" selection-end="10917" vertical-scroll-proportion="10.3300495" vertical-offset="846" max-vertical-offset="16254" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6210" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-4.921182" vertical-offset="1998" max-vertical-offset="6210" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="34" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.502439" vertical-offset="411" max-vertical-offset="1026">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/random.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="287" column="0" selection-start="10917" selection-end="10917" vertical-scroll-proportion="0.0" vertical-offset="4835" max-vertical-offset="16254">
+        <state line="33" column="48" selection-start="1245" selection-end="1250" vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="1026">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1422">
+        <state line="53" column="36" selection-start="1945" selection-end="1945" vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1422">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="75" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="972">
+        <state line="48" column="0" selection-start="2765" selection-end="2765" vertical-scroll-proportion="0.0" vertical-offset="579" max-vertical-offset="972">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="50" selection-start="5499" selection-end="5499" vertical-scroll-proportion="0.70731705" vertical-offset="2283" max-vertical-offset="3330">
+        <state line="75" column="38" selection-start="2470" selection-end="2470" vertical-scroll-proportion="0.6437659" vertical-offset="1097" max-vertical-offset="3330">
           <folding>
             <element signature="e#702#711#0" expanded="true" />
           </folding>
